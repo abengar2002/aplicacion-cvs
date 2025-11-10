@@ -1,59 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Implementación de una aplicación para crear CVs
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Autor:** Antonio Benítez García
+**Asignatura:** Desarrollo web en entorno servidor
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 📝 Descripción del Proyecto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Este proyecto es una aplicación web para la gestión de Currículums (CVs) de alumnos.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+La aplicación implementa un CRUD (Crear, Leer, Actualizar, Borrar) completo, permitiendo a los usuarios añadir nuevos perfiles de alumnos, incluyendo sus datos personales, habilidades y una fotografía. También cuenta con un sistema de búsqueda y validación de datos.
 
-## Learning Laravel
+## ✨ Características Principales
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* **Listado y Búsqueda:** Visualizar todos los CVs con una barra de búsqueda que filtra por nombre, apellidos, correo o habilidades.
+* **Creación de Perfiles:** Añadir nuevos alumnos a través de un formulario con validación de datos y subida de imagen.
+* **Edición de Perfiles:** Modificar la información de un CV existente, con la opción de reemplazar la fotografía.
+* **Borrado de Perfiles:** Eliminar un CV de la base de datos, lo que también elimina su foto asociada del servidor para no almacenar archivos huérfanos.
+* **Almacenamiento de Archivos:** Gestión de la subida de imágenes en el servidor (guardadas en `storage/app/public/fotos_cvs`).
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 📸 Galería de la Aplicación
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+A continuación se muestran las vistas principales de la aplicación.
 
-### Premium Partners
+### 1. Página Principal (Index)
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+Vista principal donde se listan todos los currículums. Aquí se puede ver la funcionalidad de búsqueda en acción.
 
-## Contributing
+<img width="1422" height="909" alt="index" src="https://github.com/user-attachments/assets/0c4e9a81-6149-4d26-9161-60d7dfc444f9" />
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+### 2. Formulario de Creación (Create)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Formulario para añadir un nuevo perfil, mostrando los campos requeridos y el selector de archivos para la fotografía.
 
-## Security Vulnerabilities
+<img width="1120" height="920" alt="create" src="https://github.com/user-attachments/assets/d3e6e25f-63c0-423c-b89b-4535965b287a" />
+<img width="828" height="921" alt="create 2" src="https://github.com/user-attachments/assets/f87ee173-8e07-4c4d-a272-b467736fa565" />
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+### 3. Formulario de Edición (Edit)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Formulario pre-rellenado con los datos del alumno que se va a editar.
+
+<img width="874" height="891" alt="edit 1" src="https://github.com/user-attachments/assets/c10f252f-39d8-4dbf-9dbb-634b0b6581e2" />
+<img width="990" height="919" alt="edit 2" src="https://github.com/user-attachments/assets/60429a05-7ef9-4f3e-9860-38ae2a9b8257" />
+
+---
+
+### 4. Funcionalidad de Borrado (Delete)
+
+La funcionalidad de borrado se activa desde el listado principal. Si tienes un modal de confirmación (un pop-up que pregunta "¿Estás seguro?"), sería ideal mostrarlo. Si no, muestra el botón de borrar en la lista.
+
+<img width="515" height="327" alt="delete" src="https://github.com/user-attachments/assets/8e4e73f9-ae59-4271-95ad-8b458eba8e65" />
