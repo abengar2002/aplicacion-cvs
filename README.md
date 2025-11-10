@@ -57,3 +57,12 @@ Formulario pre-rellenado con los datos del alumno que se va a editar.
 La funcionalidad de borrado se activa desde el listado principal. Si tienes un modal de confirmación (un pop-up que pregunta "¿Estás seguro?"), sería ideal mostrarlo. Si no, muestra el botón de borrar en la lista.
 
 <img width="515" height="327" alt="delete" src="https://github.com/user-attachments/assets/8e4e73f9-ae59-4271-95ad-8b458eba8e65" />
+
+---
+
+### 5. Funcionalidad de Visionado (View)
+
+Al dar click muestra una carta sobre el usuario seleccionado
+
+
+<img width="722" height="821" alt="view" src="https://github.com/user-attachments/assets/6a302839-a436-4cfa-899b-4ecb13146a1c" />
